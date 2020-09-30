@@ -1,25 +1,22 @@
-import Exponent from 'exponent';
 import React, { Component } from 'react';
-import { Animated, Image, Platform, StyleSheet, View, Text, ListView } from 'react-native';
+import { Animated, Image, Platform, StyleSheet, View, Text, ScrollView } from 'react-native';
 
-import data from './data';
+import { data } from './data';
 
 const NAVBAR_HEIGHT = 64;
 const STATUS_BAR_HEIGHT = Platform.select({ ios: 20, android: 24 });
 
-const AnimatedListView = Animated.createAnimatedComponent(ListView);
+const AnimatedListView = Animated.createAnimatedComponent(ScrollView);
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
-
-    const dataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
     const scrollAnim = new Animated.Value(0);
     const offsetAnim = new Animated.Value(0);
 
     this.state = {
-      dataSource: dataSource.cloneWithRows(data),
+      dataSource: data,
       scrollAnim,
       offsetAnim,
       clampedScroll: Animated.diffClamp(
@@ -163,5 +160,3 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
 });
-
-Exponent.registerRootComponent(App);

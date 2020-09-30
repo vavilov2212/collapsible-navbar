@@ -1,16 +1,17 @@
 {
   "name": "collapsible-navbar",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Collapsible Navbar demo",
   "author": null,
   "private": true,
-  "main": "main.js",
+  "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
     "@exponent/vector-icons": "~4.0.0",
     "eslint-config-anf": "^0.4.4",
+    "expo": "^38.0.10",
     "exponent": "^14.0.0",
-    "react": "~15.4.0",
-    "react-native": "https://github.com/exponent/react-native/archive/sdk-14.0.0.tar.gz"
+    "react": "16.11.0",
+    "react-native": "^0.62.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
